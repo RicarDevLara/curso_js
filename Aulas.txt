@@ -1,0 +1,362 @@
+Livros:
+
+JavaScript - O Guia Definitivo (David Flanigan)
+JavaScript - Guia do Programador (Mauricio Samy Silva)
+
+Guia de Referência - Mozilla - developer.mozilla.org - Referências
+Guia de Referência - Ecma - ecma-international.org
+
+------------------------------------------------------------------
+Editor a ser utilizado: Visual Studio
+Instalar também o NodeJS - nodejs.org
+
+------------------------------------------------------------------
+No JS podemos atribuir strings com "", '', ``
+
+CTRL+; abre um comentário
+
+Nomes de variáveis = identificadores
+
+ - podem começar com letra, $ ou _
+ - não podem começar com números
+ - é possível usar números e letras
+ - é possível usar acentos e símbolos
+ - não podem ter espaços
+ - não podem ser palavras reservadas (function, var, alert)
+ - maiúsculas e minúsculas fazem diferença
+ - tente escolher nomes coerentes para as variáveis
+
+typeof (mostra o tipo da variável)
+
+TIPO NUMBER (Infinity e NaN - Not a Number)
+5 18 -12 0.5 -15.9 3.14 8.0
+
+TIPO STRING
+"Google" 'JavaScript' `Maria`
+
+TIPO BOOLEAN
+Truo False
+
+OUTROS TIPOS
+null
+undefined
+object
+  Array
+function
+
+No node (as linhas com > foram digitadas por mim)
+---------------------|
+> var n = 200	     |
+undefined	     |
+> n		     |
+200		     |
+> typeof n	     |
+'number'	     |
+> n = "Google"       |
+'Google'	     |
+> n		     |
+'Google'             |
+> typeof n	     |
+'string'	     |
+> typeof 6	     |
+'number'             |
+> typeof "6"	     |
+'string'	     |
+> typeof []          |
+'object'             |
+> typeof {}          |
+'object'             |
+> typeof function(){}|
+'function'	     |
+> typeof NaN	     |
+'number'	     |
+> typeof Infinity    |
+'number'	     |
+> typeof null	     |
+'object'	     |
+---------------------|
+
+= -> recebe
+number + number -> adição
+string + string -> concatenação - window.prompt recebe sempre string
+
+Quando precisar converter para números:
+ - Number.parseInt(n) - para inteiro
+ - Number.parseFloat(n) - para real (com casas decimais)
+ - pode usar apenas Number(n) também
+
+Quando precisar converter para string:
+ - n.toString()
+ - String(n)
+
+var s = 'JavaScrpipt'
+
+s.length - quantos caracteres a string s tem
+s.toUpperCase() - tudo para maiúsculas
+s.toLowerCase() - tudo para minúsculas
+
+var n1 = 1543.5
+
+n1.toFixed(2) - duas casas decimais
+
+------------------------------------------------------------------|
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})|
+'R$ 1.545,50'							  |
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})|
+'US$ 1.545,50'							  |
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})|
+'€ 1.545,50'							  |
+------------------------------------------------------------------|
+
+--------------------------------------------------|
+		    OPERADORES			  |
+--------------------------------------------------|
+ - aritméticos					  |
+ 5 + 2 = 7					  |
+ 5 - 2 = 3					  |
+ 5 * 2 = 10					  |
+ 5 / 2 = 2.5					  |
+ 5 % 2 = 1 (operador de resto da divisão inteira) |
+ 5 ** 2 = 25 (potência)				  |
+ORDEM DE PRECEDÊNCIA: ()			  |
+		      **			  |
+		      * / %  			  |
+		      + -		          |
+--------------------------------------------------|
+> var a = 5+3					  |
+undefined					  |
+> a					   	  |
+8					  	  |
+> var b = a%5					  |
+undefined					  |
+> b					  	  |
+3					  	  |
+> var c = 5*b**2				  |
+undefined					  |
+> c					  	  |
+45					          |
+> var d = 10-a/2				  |
+undefined					  |
+> d					          |
+6					          |
+> var e = 6*2/d					  |					  
+undefined					  |
+> e					          |
+2					          |
+> var f = b % e + 4 / e				  |
+undefined					  |
+> f					          |
+3					          |
+--------------------------------------------------|
+ - atribuição					  |
+--------------------------------------------------|
+ - relacionais (Sempre uma resposta booleana)	  |
+5 > 2 -> true					  |
+7 < 4 -> false					  |
+8 >= 8 -> true					  |
+9 <= 7 -> false  				  |
+5 == 5 -> true (neste caso os == são igual)	  |
+5 == '5' -> true				  |
+5 === '5' -> false (=== testa se são idênticos)   |
+		   (são o mesmo valor, porém, com |
+		    tipos diferentes)		  |
+4 != 4 -> false (!= sinal de diferente)		  |
+--------------------------------------------------|
+> 5 == '5'					  |
+true					 	  |
+> var x = 5					  |
+undefined					  |
+> var y = '5'					  |
+undefined					  |
+> typeof x					  |
+'number'					  |
+> typeof y					  |
+'string'					  |
+> x == y					  |
+true					  	  |
+> x === y (idêntico)				  |
+false					  	  |
+> x != y					  |
+false					  	  |
+> x !== y (desigual restrito)			  |
+true					  	  |
+--------------------------------------------------|
+ - lógicos					  |
+! -> negação (operador unário)			  |
+true ! false (este operador transformou o true em |
+	      false)				  |
+false ! true (vice-versa)			  |
+-----------------				  |
+&& -> conjunção ('e' lógico - operador binário)   |
+true && true -> true				  |
+true && false -> false				  |
+false && true -> false				  |
+false && false -> false				  |
+-----------------				  |
+|| -> disjunção ('ou' lógico)			  |
+true || true -> true				  |
+true || false -> true				  |
+false || true -> true				  |
+false || false -> false				  |
+-----------------				  |
+primeiro os operadores aritméticos, depois os	  |
+relacionais e depois os lógicos, nessa ordem:	  |
+primeiro o 'não', depois o 'e' e por fim o 'ou'   |
+- sempre nessa ordem				  |
+						  |
+> var a = 5					  |
+undefined					  |
+> var b = 8					  |
+undefined					  |
+> true && false					  |
+false					  	  |
+> true && true					  |
+true					  	  |
+> false || false				  |
+false					  	  |
+> true || false					  |
+true					  	  |
+> true || true					  |
+true					  	  |
+> a > b && b% 2 ==0				  |
+false					  	  |
+> a <= b || b / 2 == 2				  |
+true					  	  |
+-----------------				  |
+idade >= 15 && idade <= 17			  |
+a idade está entre 15 e 17?			  |
+			  			  |
+estado == 'RJ' || estado == 'SP'		  |
+o estado é RJ ou SP?			  	  |
+			  			  |
+salário > 1500 && sexo != 'M'			  |
+o salário é acima de 1500 e não é homem?	  |
+--------------------------------------------------|
+ - ternário					  |
+teste ? true : false				  |
+teste lógico ? o que acontece se for verdadeiro : |
+o que acontece se for falso			  |
+			  			  |
+> var media = 5.5			   	  |
+undefined			   	  	  |
+> media > 7?'APROVADO':'REPROVADO'		  |
+'REPROVADO'			   	  	  |
+> media += 3			   	  	  |
+8.5			   	  		  |
+> media			   	  		  |
+8.5			   	  		  |
+> media > 7?'APROVADO':'REPROVADO'		  |
+'APROVADO'			   	  	  |
+> var x = 8			   	  	  |
+undefined			   	  	  |
+> var res = x % 2 == 0 ? 5 : 9			  |
+undefined			   	  	  |
+> x			   	  		  |
+8			   	  		  |
+> res			   	  		  |
+5			   	  		  |
+> var idade = 19			   	  |
+undefined			   	  	  |
+> var r = idade >= 18 ? 'MAIOR' : 'MENOR'	  |
+undefined			   	  	  |
+> r			   	  		  |
+'MAIOR'			   	  		  |
+--------------------------------------------------|
+
+Árvore DOM
+				->meta
+       ->location	 ->head ->title	
+window ->document ->html |
+       ->history	 ->body ->h1
+			   	->p ->strong
+				->div
+
+'child' e 'parent':
+
+'html' é parent de 'head' e 'body'
+'html' é child de 'document'
+
+SELECIONANDO:
+
+por Marca - window.document.getElementByTagName()
+innerText = pega o texto sem a formatação (sem as filhas)
+innerHTML = pega o HTML inteiro, inclusive com as filhas
+
+por ID - window.document.getElementByID()
+
+por nome - window.document.getElementsByName()[]
+
+por classe - window.document.getElementsByClassName()[]
+
+por seletor - window.document.querySelector('div#id')
+	      window.document.querySelector('div.class')
+
+Eventos DOM - coisas que posso fazer com o elemento
+
+mouseenter = semelhante ao hover
+mousemove = enquanto o mouse estiver dentro do elemento selecionado
+mousedown = movimento de clicar e segurar
+mouseup = movimento de soltar o clique
+click = clicar
+mouseout = tirar o mouse de cima do elemento selecionado
+
+function ação(parâmetro-não obrigatório) {
+BLOCO (código da função)
+}
+-------------------------------------|
+Condições:	     	       	     |
+	     	     		     |
+ - Condição Simples:	     	     |
+if(condição) {	     	     	     |
+BLOCO - true	     	     	     |
+}else{	     	     		     |
+BLOCO - false	     	     	     |
+}	     	     		     |
+-------------------------------------|
+ - Condição Aninhada:	     	     |
+if (condição1) {	             |
+  BLOCO1 - true (condição1)	     |
+}else{	     			     |
+	if (condição2) {	     |
+ 	  BLOCO2 - true (condição2)  |
+	}else{ 			     |
+	  BLOCO3 - false (condição2) |
+	}			     |
+}				     |
+-------------------------------------|
+ - Condição Múltipla:	     	     |
+switch (expressão) {	     	     |
+  case valor 1:	     	             |
+	BLOCO			     |
+	break			     |
+  case valor 2:	     	             |
+	BLOCO			     |
+	break			     |
+  case valor 3:	     	             |
+	BLOCO			     |
+	break			     |
+  defalut:			     |
+	BLOCO			     |
+	break			     |
+}				     |
+-------------------------------------|
+
+Repetições:			     
+-------------------------------------|
+while (condição) {		     |
+	BLOCO - será executado	     |
+		enquanto a condição  |
+		for verdadeira	     |
+} encerra quando a condição for falsa|
+-------------------------------------|
+do {				     |
+	BLOCO			     |
+} while (condição)		     |
+-------------------------------------|
+for (inicio; teste; incremento) {    |
+	BLOCO - executa o bloco	     |
+		fazendo o incremento |
+		enquanto o teste     |
+		lógico for verdadeiro|
+}				     |
+-------------------------------------|
