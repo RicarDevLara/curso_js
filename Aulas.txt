@@ -360,3 +360,19 @@ for (inicio; teste; incremento) {    |
 		lógico for verdadeiro|
 }				     |
 -------------------------------------|
+Variáveis simples - armazenam apenas |
+		    um valor;        |
+Variáveis compostas - armazenam	     |
+		      vários valores |
+		      em uma mesma   |
+		      estrutura;     |
+array ou vetor			     |
+varíavel composta, preenchida pelos  |
+elementos. Cada posição é chamada de |
+índice (o primeiro índice é o 0).    |
+				     |
+let num = [5, 8, 4]		     |
+índice 0 = 5			     |
+índice 1 = 8			     |
+índice 2 = 4			     |
+-------------------------------------|
