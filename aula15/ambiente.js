@@ -14,3 +14,4 @@ if (pos == -1) {
     console.log(`O valor está na posição ${pos}.`)
 }
 
+
