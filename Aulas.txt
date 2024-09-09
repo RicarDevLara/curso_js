@@ -360,7 +360,7 @@ for (inicio; teste; incremento) {    |
 		lógico for verdadeiro|
 }				     |
 -------------------------------------|
-Variáveis simples - armazenam apenas |
+Variáveis simples - armazenam apenas | AULA 15
 		    um valor;        |
 Variáveis compostas - armazenam	     |
 		      vários valores |
@@ -375,4 +375,48 @@ let num = [5, 8, 4]		     |
 índice 0 = 5			     |
 índice 1 = 8			     |
 índice 2 = 4			     |
+				     |
+num[4, 5, 6, 7, 8]		     |
+num.indexOf(7) - posição 3	     |
+num.indexOf(3) - retorna "-1", que   |
+		 quer dizer que o    |
+		 elemento não existe |
+		 no vetor	     |
+-------------------------------------|
+FUNÇÕES				     | AULA 16
+				     |
+Funções são ações executadas assim   |
+que são chamadas ou em decorrência de|
+algum evento.  		 	     |
+Uma função pode receber parâmetros e |
+retornar um resultado.		     |
+				     |
+Toda função precisa ter uma chamada. |
+A chamada pode ser automatizada.     |
+Toda função tem uma ação envolvida.  |
+Nem toda função tem parâmetros ou    |
+retornos.			     |
+				     |
+function ação(parâmetros){	     |
+	ação			     |
+	return res		     |
+}				     |
+				     |
+ação (5) - chamando a ação com o     |
+"parâmetro real" 5.		     |
+-------------------------------------|
+O que estudar agora?	  	     | AULA 17
+				     |
+ - functions			     |
+ - objetos			     |
+ - modularização		     |
+ - RegEx (expressões regulares	     |
+ - JSON			     	     |
+ - AJAX				     |
+ - NodeJS			     |
+ - Frameworks			     |
+				     |
+Objetos - declaração entre {}	     |
+let amigo = {nome:'José',sexo:'M',   |
+	     peso:85.4,engordar(p){}}|
 -------------------------------------|
